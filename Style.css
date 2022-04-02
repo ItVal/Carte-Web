@@ -1,0 +1,73 @@
+h1 
+{ 
+    color: blue;
+}
+
+.connection
+{
+    color: chartreuse;
+    
+}
+.inscription
+{
+    color: aquamarine;
+}
+
+.confiance
+{
+    color: red;
+    text-decoration: underline;
+}
+
+#Conteneur
+{
+    display: flex;
+    text-align: center;
+    justify-content:left;
+}
+
+
+
+.SConteneur
+{
+    width: 50%;
+}
+
+.SConteneur:nth-child(1)
+{
+    font-size: 20px;
+    border-style: solid;
+}
+.bouton
+{
+    font-size: 20px;
+    color: blue;
+    border-radius: 20px / 10px;
+}
+.bouton:hover
+{
+    color: red ;
+}
+
+.txt:focus
+{
+    background-color: yellow;
+}
+.SConteneur:nth-child(2)
+{
+    background-color: aqua;
+
+}
+.tval
+{
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.MonImg
+{
+    width: 200px;
+    
+}
+
