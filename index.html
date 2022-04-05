@@ -1,51 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="Style.css"> <!--appel du fichier Styles.css-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kaliacademy</title>
-</head>
-<body>
-    <h1>Kali Academy Training</h1>
-    <div id="Conteneur"> <!--Grande boite "conteneur"-->
-    <div class="SConteneur"> <!--1ère petite boite "Connexion"-->
-        <h2 class="connection">Connectez-vous svp! </h2>
-       
-            <p> User Name or email <br>
-            <input class="txt" type="text" /> <br>
-             Password <br>
-            <input class="txt" type="text" /> 
-        </p>
-        <input class="bouton" type="button" value="Connexion">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-        <h2 class="inscription">Pas de compte? Inscrivez vous svp! </h2>
-            
-                <p> User Name <br>
-                <input class="txt" type="text" /> <br>
-                 Password <br>
-                <input class="txt" type="text" /> <br>
-                Email <br>
-                <input class="txt" type="text" />
-                </p>
-            <input class="bouton" type="button" value="Valider">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Val Corporate  | Sami ul Haq</title>
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/9e2213edf0.js"
+      crossorigin="anonymous"
+    ></script>
 
-    </div>
-    <div class="SConteneur"> <!--2éme petite boite "Connexion"-->
-        <h2 class="confiance">Ils nous font confiance</h2>
-      
-        <p class="tval">"Je m'appel valentin Nas, j'était nul en HTML & CSS <br> 
-            mais grace à Kali Academy, je suis aujourd'hui exper! <br>
-        Mdr!" <br>
-        <br>
-        Valentin Nas <br>
-        Dev.</p>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-        <img class="MonImg" src="img/portrait_val.png" alt="portrait_val">
-        <figcaption>Portrait_val</figcaption>
+  <body>
+    <main>
+      <header>
+        <!-- Logo -->
+        <a href="./index.html" class="logo">Val Corporate</a>
 
-    </div>
-</div>
-</body>
+        <!-- Navigation -->
+        <nav>
+          <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Appropos </a></li>
+            <li><a href="#">Contactez-nous</a></li>
+          </ul>
+        </nav>
+
+        <!-- Search & Cart -->
+        <div class="left-nav">
+          <a href="#"><i class="fas fa-search"></i></a>
+          <a href="#"><i class="fas fa-cart-arrow-down"></i></a>
+        </div>
+
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+      </header>
+
+      <!-- User Input Section -->
+      <section class="user-input">
+        <div class="user-amount">
+          <h1>Soumettez vontre montant:</h1>
+          <div class="amount">
+            <input id="userAmount" type="text" />
+            <button onclick="submitAmount()">Soumettre</button>
+          </div>
+          <p>Votre Montant: <span id="amountEntered">0</span></p>
+        </div>
+      </section>
+
+      <!-- Products Section -->
+      <section class="products">
+        <div class="product-item">
+          <div class="product-img">
+            <img src="./images/Apple.png" alt="apple" />
+          </div>
+
+          <div class="product-description">
+            <h2 class="product-name"><a href="#">Paume</a></h2>
+
+            <div class="rating">
+              <span>☆</span><span>☆</span><span>☆</span><span>☆</span
+              ><span>☆</span>
+            </div>
+
+            <p id="applePrice">Prix: 1000 cdf/pc</p>
+            <div class="buttons">
+              <button class="btn-plus" onclick="increaseItem('apple' , 'applePrice')">+</button>
+              <input type="text" id="apple" value="0" />
+              <button class="btn-minus" onclick="decreaseItem('apple' , 'applePrice')">-</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-img">
+            <img src="./images/Orange.png" alt="apple" />
+          </div>
+
+          <div class="product-description">
+            <h2 class="product-name"><a href="#">Orange</a></h2>
+
+            <div class="rating">
+              <span>☆</span><span>☆</span><span>☆</span><span>☆</span
+              ><span>☆</span>
+            </div>
+
+            <p id="orangePrice">Prix: 500 cdf/pc</p>
+            <div class="buttons">
+              <button class="btn-plus" onclick="increaseItem('orange' , 'orangePrice')">+</button>
+              <input type="text" id="orange" value="0" />
+              <button class="btn-minus" onclick="decreaseItem('orange' , 'orangePrice')">-</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-img">
+            <img src="./images/Mango.png" alt="apple" />
+          </div>
+
+          <div class="product-description">
+            <h2 class="product-name"><a href="#">Mangue</a></h2>
+
+            <div class="rating">
+              <span>☆</span><span>☆</span><span>☆</span><span>☆</span
+              ><span>☆</span>
+            </div>
+
+            <p id="mangoPrice">Prix: 300 cdf/pc</p>
+            <div class="buttons">
+              <button class="btn-plus" onclick="increaseItem('mango' , 'mangoPrice')">+</button>
+              <input type="text" id="mango" value="0" />
+              <button class="btn-minus" onclick="decreaseItem('mango' , 'mangoPrice')">-</button>
+            </div>
+          </div>
+        </div>
+
+           <!-- Ajout produits -->        
+          <div class="product-item">
+          <div class="product-img">
+            <img src="./images/fromage.webp" alt="apple" />
+          </div>
+
+          <div class="product-description">
+            <h2 class="product-name"><a href="#">Fromage</a></h2>
+
+            <div class="rating">
+              <span>☆</span><span>☆</span><span>☆</span><span>☆</span
+              ><span>☆</span>
+            </div>
+
+            <p id="mangoPrice">Prix: 9000 cdf/pc</p>
+            <div class="buttons">
+              <button class="btn-plus" onclick="increaseItem('mango' , 'mangoPrice')">+</button>
+              <input type="text" id="mango" value="0" />
+              <button class="btn-minus" onclick="decreaseItem('mango' , 'mangoPrice')">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-item">
+          <div class="product-img">
+            <img src="./images/yaourt.jpg" alt="apple" />
+          </div>
+
+          <div class="product-description">
+            <h2 class="product-name"><a href="#">Yaourt</a></h2>
+
+            <div class="rating">
+              <span>☆</span><span>☆</span><span>☆</span><span>☆</span
+              ><span>☆</span>
+            </div>
+
+            <p id="mangoPrice">Prix: 9000 cdf/pc</p>
+            <div class="buttons">
+              <button class="btn-plus" onclick="increaseItem('mango' , 'mangoPrice')">+</button>
+              <input type="text" id="mango" value="0" />
+              <button class="btn-minus" onclick="decreaseItem('mango' , 'mangoPrice')">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-item">
+          <div class="product-img">
+            <img src="./images/saucisson.jpg" alt="apple" />
+          </div>
+
+          <div class="product-description">
+            <h2 class="product-name"><a href="#">Saucisses</a></h2>
+
+            <div class="rating">
+              <span>☆</span><span>☆</span><span>☆</span><span>☆</span
+              ><span>☆</span>
+            </div>
+
+            <p id="mangoPrice">Prix: 800 cdf/pc</p>
+            <div class="buttons">
+              <button class="btn-plus" onclick="increaseItem('mango' , 'mangoPrice')">+</button>
+              <input type="text" id="mango" value="0" />
+              <button class="btn-minus" onclick="decreaseItem('mango' , 'mangoPrice')">-</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="amount-details">
+        <h3>Total: usd <span id="userTotalAmount">0</span></h3>
+        <h3>Nbr: d'articles<span id="numOfItem">0</span></h3>
+        <h3>Votre solde : usd <span id="balance">0</span></h3>
+      </div>
+    </main>
+
+    <!-- JS File -->
+    <script src="./script/script.js"></script>
+  </body>
 </html>
